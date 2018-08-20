@@ -1,6 +1,6 @@
 {
   "name": "ussd-simulator",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Chuma Umenze",
   "homepage": "http://ionicframework.com/",
   "private": true,
@@ -20,6 +20,7 @@
     "@angular/http": "5.2.11",
     "@angular/platform-browser": "5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
+    "@capacitor/android": "^1.0.0-beta.6",
     "@capacitor/cli": "^1.0.0-beta.6",
     "@capacitor/core": "^1.0.0-beta.6",
     "@capacitor/ios": "^1.0.0-beta.6",
