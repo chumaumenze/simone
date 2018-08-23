@@ -9,7 +9,6 @@
 log.txt
 *.sublime-project
 *.sublime-workspace
-.idea
 .vscode/
 npm-debug.log*
 
@@ -21,8 +20,9 @@ npm-debug.log*
 .versions/
 android/
 coverage/
-dist/
+electron/
 ios/
+www/
 node_modules/
 tmp/
 temp/
@@ -30,7 +30,6 @@ platforms/
 plugins/
 plugins/android.json
 plugins/ios.json
-www/
 $RECYCLE.BIN/
 
 .DS_Store

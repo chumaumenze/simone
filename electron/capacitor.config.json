@@ -1,6 +1,0 @@
-{
-  "appId": "com.simulator.ussd",
-  "appName": "USSD Simulator",
-  "bundledWebRuntime": false,
-  "webDir": "www"
-}

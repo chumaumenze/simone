@@ -1,5 +1,7 @@
 {
   "name": "USSD Simulator",
-  "integrations": {},
-  "type": "ionic-angular"
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
 }
