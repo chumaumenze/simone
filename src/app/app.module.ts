@@ -42,7 +42,14 @@ export function provideSettings(storage: Storage) {
   });
 }
 
-
+// {
+//   tabsPlacement: 'top',
+//   platforms: {
+//     ios: {
+//       tabsPlacement: 'bottom',
+//     }
+//   }
+// }
 @NgModule({
   declarations: [AppComponent, LoaderComponent, AlertComponent, ToastComponent],
   entryComponents: [],
