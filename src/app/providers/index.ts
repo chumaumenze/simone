@@ -1,2 +1,2 @@
-export { Settings } from './settings/settings';
-export { User } from './user/user';
+export {Settings} from './settings/settings';
+export {User} from './user/user';

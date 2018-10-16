@@ -1,17 +1,27 @@
-import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { DialerPage } from './dialer.page';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {RouterModule, Routes} from '@angular/router';
+
+import {IonicModule} from '@ionic/angular';
+import {DialerPage} from './dialer.page';
+import {KeyboardComponent} from '../../components/keyboard/keyboard.component';
+
+const routes: Routes = [
+    {
+        path: '',
+        component: DialerPage
+    }
+];
 
 @NgModule({
-  imports: [
-    IonicModule,
-    CommonModule,
-    FormsModule,
-    RouterModule.forChild([{ path: '', component: DialerPage }])
-  ],
-  declarations: [DialerPage]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        RouterModule.forChild(routes)
+    ],
+    declarations: [DialerPage, KeyboardComponent]
 })
-export class DialerPageModule {}
+export class DialerPageModule {
+}
