@@ -48,8 +48,9 @@ export class DialerPage implements OnInit {
          */
         this.keyboard.onClick.subscribe((key: any) => {
             const field = this.focus;
-            if (['number', '*', '#'].includes(typeof key)) {
+            if (['*', '#'].includes(key) || typeof key === 'number') {
                 this[field] += key;
+                console.log('Key from onClick: ', key);
             } else {
                 if (key === 'backspace') {
                     this[field] = this[field].substring(0, this[field].length - 1);
