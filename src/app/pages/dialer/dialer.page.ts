@@ -1,61 +1,99 @@
-import { Component } from '@angular/core';
-import { LoadingController, AlertController, NavController } from '@ionic/angular';
-import * as $ from 'jquery';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {AlertController, LoadingController, NavController} from '@ionic/angular';
+import {IonicKeyboardOptions, KeyboardComponent} from '../../components';
 
 @Component({
-  selector: 'app-dialer',
-  templateUrl: 'dialer.page.html',
-  styleUrls: ['dialer.page.scss']
+    selector: 'dialer',
+    templateUrl: './dialer.html',
+    styleUrls: ['./dialer.scss'],
 })
-export class DialerPage {
-  constructor(public navCtrl: NavController, public loader: LoadingController,
-    public alerter: AlertController) {}
+export class DialerPage implements OnInit {
 
-  async presentLoading() {
-    const loading = await this.loader.create({
-      content: 'Please wait...',
-      duration: 2000
-    });
-    return await loading.present();
-  }
+    @ViewChild(KeyboardComponent) keyboard;
 
-  async presentLoadingWithOptions() {
-    const loading = await this.loader.create({
-      spinner: 'hide',
-      duration: 5000,
-      content: 'Please wait...',
-      translucent: true,
-      cssClass: 'custom-class custom-loading',
-      showBackdrop: true,
-    });
-    return await loading.present();
-  }
-}
+    userInput: string = '';
+    focus: string = '';
 
-$(document).ready(function() {
+    public keyboardSettings: IonicKeyboardOptions = {
+        align: 'center',
+        width: '100%',
+        visible: true,
+        leftActionOptions: {
+            iconName: 'ios-backspace',
+            fontSize: '1.4em'
+        },
+        rightActionOptions: {
+            iconName: 'ios-backspace',
+            // text: '.',
+            fontSize: '1.4em'
+        },
+        roundButtons: true,
+        showLetters: true,
+        swipeToHide: true,
+        // Available themes: KeyboardComponent.themes
+        theme: 'chumaumenze'
+    };
 
-  /*	Delete */
-  $('.backspace').click(function() {
-    const numbers =  $('.digits-display').text();
-    const numbers2 =  $('.digits-display').text().length;
-    $('.digits-display').text(numbers.substr(0, numbers2 - 1));
-  });
-
-
-  // Event Handler
-  function eventHandler(event) {
-    // console.log(event);
-    const digitsCount =  $('.digits-display').text().length;
-    const character = event.currentTarget.children[0].firstChild.data;
-    if (digitsCount < 18) {
-      $('.digits-display').append(`${character}`);
+    constructor(
+        public navCtrl: NavController,
+        public loader: LoadingController,
+        public alerter: AlertController
+    ) {
     }
-  }
 
-  /*	Display	*/
-  for (let digit = 0; digit <= 9; digit++) {
-    $(`.pushed${digit}`).click(event, eventHandler);
-  }
-  $('.pushedstar, .pushedpound').click(event, eventHandler);
+    ngOnInit(): void {
+        /**
+         * Since we want to prevent native keyboard to show up, we put the disabled
+         * attribute on the input, and manage focus programmaticaly.
+         */
+        this.keyboard.onClick.subscribe((key: any) => {
+            const field = this.focus;
+            if (['number', '*', '#'].includes(typeof key)) {
+                this[field] += key;
+            } else {
+                if (key === 'backspace') {
+                    this[field] = this[field].substring(0, this[field].length - 1);
+                }
+                if (key === 'dial' && this[field].toString().length > 0) {
+                    this.performLogin();
+                }
+            }
+        });
 
-});
+        // (BLur) Clear focus field name on keyboard hide
+        this.keyboard.onHide.subscribe(() => {
+            this.focus = '';
+        });
+    }
+
+    public showKeyboard() {
+        this.keyboard.show();
+    }
+
+    // Event way
+    public numberClick(key: number) {
+        console.log('From event: ', key);
+    }
+
+    public hideKeyboard() {
+        this.keyboard.hide();
+    }
+
+    setFocus(field: string) {
+        this.focus = field;
+        this.keyboard.show();
+    }
+
+    async performLogin() {
+        const loading = await this.loader.create({
+            spinner: 'show',
+            duration: 5000,
+            content: 'Please wait...',
+            //   translucent: true,
+            //   cssClass: 'custom-class custom-loading',
+            showBackdrop: true,
+        });
+        return await loading.present();
+    }
+
+}
