@@ -13,7 +13,7 @@ declare var Hammer: any;
     selector: 'ion-keyboard',
     // element: 'ion-keyboard',
     templateUrl: 'keyboard.component.html',
-    styles: ['./keyboard.component.scss'],
+    styleUrls: ['keyboard.component.scss'],
 })
 export class KeyboardComponent implements OnInit, OnDestroy {
     @Output() buttonClick: EventEmitter<any> = new EventEmitter();

@@ -23,5 +23,4 @@ const routes: Routes = [
     ],
     declarations: [DialerPage, KeyboardComponent]
 })
-export class DialerPageModule {
-}
+export class DialerPageModule {}

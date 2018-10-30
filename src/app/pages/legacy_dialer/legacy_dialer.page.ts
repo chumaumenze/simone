@@ -4,8 +4,8 @@ import * as $ from 'jquery';
 
 @Component({
     selector: 'app-dialer',
-    templateUrl: 'dialer.page.html',
-    styleUrls: ['dialer.page.scss']
+    templateUrl: 'legacy_dialer.page.html',
+    styleUrls: ['legacy_dialer.page.scss']
 })
 export class DialerPage {
     constructor(public navCtrl: NavController, public loader: LoadingController,

@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "author": "Chuma Umenze",
   "homepage": "https://codebloks.com.ng/",
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=6.0.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ionic lab --no-open",
