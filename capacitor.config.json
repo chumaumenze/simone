@@ -1,6 +1,7 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "USSD Simulator",
+  "appId": "com.chumaumenze.simone",
+  "appName": "SimOne",
   "bundledWebRuntime": false,
-  "webDir": "www"
+  "webDir": "dist",
+  "linuxAndroidStudioPath": "/media/chumaumenze/Deepin Root/opt/android-studio/bin/studio.sh"
 }
