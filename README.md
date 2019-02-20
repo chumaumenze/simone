@@ -1,4 +1,4 @@
-# USSD Simulator
+# SimOne
 
 
 [![pipeline status](https://gitlab.com/chumaumenze/ussd-simulator/badges/master/pipeline.svg)](https://gitlab.com/chumaumenze/ussd-simulator/commits/master)
@@ -9,16 +9,19 @@
 [![thank you](https://img.shields.io/badge/say%20thanks-!-1EAEDB.svg?longCache=true&style=for-the-badge)](https://saythanks.io/to/chumaumenze)
 
 
-USSD Simulator is a tool that helps developers test USSD applications during 
+SimOne is a USSD simulator that helps developers test USSD applications during 
 development and testing phase. 
 
-It simulates the phone interface or dialer interface of mobile devices. Users 
+It simulates the phone or dialer interface of mobile devices. Users 
 can simply test their apps by dialing a USSD code and the simulator initiates 
 a USSD session by calling an already defined endpoint. 
 
 
-### Legacy Dialer Screen
-![Legacy Dialer ScreenShot](./src/assets/images/dialer.png "Legacy Dialer ScreenShot")
+### SimOne Screen
+![SimOne ScreenShot](src/assets/images/dialer.png "SimOne ScreenShot")
+
+### SimOne Legacy Screen
+![SimOne Legacy ScreenShot](src/assets/images/legacy_dialer.png "SimOne Legacy ScreenShot")
 
 
 The problems that USSD Simulator seeks to solve are multi-faceted:

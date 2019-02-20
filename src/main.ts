@@ -1,12 +1,19 @@
-import {enableProdMode} from '@angular/core';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import Vue from "vue";
+import Ionic from "@ionic/vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+import "./registerServiceWorker";
 
-import {AppModule} from './app/app.module';
-import {environment} from './environments/environment';
+import "@ionic/core/css/ionic.bundle.css";
 
-if (environment.production) {
-    enableProdMode();
-}
+Vue.config.productionTip = false;
+Vue.config.ignoredElements = [/^ion-/];
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-    .catch(err => console.log(err));
+Vue.use(Ionic);
+
+new Vue({
+  router,
+  store,
+  render: (h) => h(App),
+}).$mount("#app");

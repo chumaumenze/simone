@@ -1,8 +1,8 @@
 {
-  "name": "USSD Simulator",
+  "name": "SimOne",
   "integrations": {
     "capacitor": {}
   },
-  "type": "angular",
+  "type": "custom",
   "pro_id": "1fdee044"
 }
