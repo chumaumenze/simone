@@ -9,8 +9,8 @@
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strictNullChecks": false,
-//    "noImplicitThis": false,
+    // "strictNullChecks": false,
+   // "noImplicitThis": false,
     "sourceMap": true,
     "baseUrl": ".",
     "types": [

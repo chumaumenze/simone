@@ -1,9 +1,9 @@
 # SimOne
 
 
-[![pipeline status](https://gitlab.com/chumaumenze/ussd-simulator/badges/master/pipeline.svg)](https://gitlab.com/chumaumenze/ussd-simulator/commits/master)
-[![coverage report](https://gitlab.com/chumaumenze/ussd-simulator/badges/master/coverage.svg)](https://gitlab.com/chumaumenze/ussd-simulator/commits/master)
-[![license](https://img.shields.io/badge/license-MIT-green.svg)](https://gitlab.com/chumaumenze/ussd-simulator/blob/features/add-new-keyboard/LICENSE)
+[![pipeline status](https://gitlab.com/chumaumenze/simone/badges/master/pipeline.svg)](https://gitlab.com/chumaumenze/simone/commits/master)
+[![coverage report](https://gitlab.com/chumaumenze/simone/badges/master/coverage.svg)](https://gitlab.com/chumaumenze/simone/commits/master)
+[![license](https://img.shields.io/badge/license-MIT-green.svg)](https://gitlab.com/chumaumenze/simone/blob/features/add-new-keyboard/LICENSE)
 [![node version](https://img.shields.io/badge/node@latest-%3E%3D8.0.0-brightgreen.svg)](https://nodejs.org)
 
 [![thank you](https://img.shields.io/badge/say%20thanks-!-1EAEDB.svg?longCache=true&style=for-the-badge)](https://saythanks.io/to/chumaumenze)
@@ -24,8 +24,8 @@ a USSD session by calling an already defined endpoint.
 ![SimOne Legacy ScreenShot](src/assets/images/legacy_dialer.png "SimOne Legacy ScreenShot")
 
 
-The problems that USSD Simulator seeks to solve are multi-faceted:
-+ You no longer need to use ngrok to other software to test your software
+The problems that SimOne seeks to solve are multi-faceted:
++ You no longer need to use ngrok or other software to test your USSD
 + Testing can be done locally
 + No network connection is required
 + Intuitive feel

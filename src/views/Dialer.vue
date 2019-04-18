@@ -1,6 +1,6 @@
 <template lang="pug">
-  ion-app.home
-    ion-header
+  #dialer
+    // ion-header
       ion-toolbar
         ion-title SimOne
     sim-one-keyboard(v-bind='keyboardSettings', @keyClick='handleInput($event)')
